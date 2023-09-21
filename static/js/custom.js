@@ -182,7 +182,7 @@ $(document).ready(function() {
             localStorage.setItem("session",JSON.stringify(messages));
           }
         } else {
-          addFailMessage('出错啦！请稍后再试!');
+          addFailMessage('Something went wrong Try Again!');
         }
       },
       complete : function(XMLHttpRequest,status){
@@ -381,7 +381,7 @@ $(document).ready(function() {
   // 复制代码功能
   function copy(){
     $('pre').each(function() {
-      let btn = $('<button class="copy-btn">复制</button>');
+      let btn = $('<button class="copy-btn">COPY</button>');
       $(this).append(btn);
       btn.hide();
     });
@@ -408,16 +408,16 @@ $(document).ready(function() {
       // 执行复制命令
       try {
         document.execCommand('copy');
-        $(this).text('复制成功');
+        $(this).text('COPY DONE');
       } catch (e) {
-        $(this).text('复制失败');
+        $(this).text('COPY FAIL');
       }
 
       // 从文档中删除临时的 textarea 元素
       document.body.removeChild(textArea);
 
       setTimeout(() => {
-        $(this).text('复制');
+        $(this).text('COPY');
       }, 2000);
     });
   }
